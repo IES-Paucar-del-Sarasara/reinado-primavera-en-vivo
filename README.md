@@ -5,7 +5,7 @@ para seguir el evento desde cualquier celular o computadora.
 
 Es una página estática (GitHub Pages) que **solo lee** el nodo `/publico` de
 Firebase Realtime Database. Ese nodo lo publica, con cada cambio, el sistema
-del evento ([reinado-primavera](https://github.com/jesusguzman28/reinado-primavera), Laravel).
+del evento ([reinado-primavera](https://github.com/IES-Paucar-del-Sarasara/reinado-primavera), Laravel).
 
 ```
 Laptop del evento (Laravel) ──escribe──▶ Firebase /publico ──en vivo──▶ esta página
