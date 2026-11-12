@@ -4,47 +4,98 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#140c1a">
-  <!-- Que el navegador no se quede con una versión vieja durante el evento -->
-  <meta http-equiv="Cache-Control" content="no-cache">
-  <title>Reinado de Primavera 2026 · En vivo</title>
-  <meta name="description" content="Sigue en vivo el Reinado de Primavera 2026 del Instituto Paucar del Sarasara: candidatas, conteo de sobres y la coronación.">
-  <meta property="og:title" content="Reinado de Primavera 2026 · En vivo">
-  <meta property="og:description" content="Candidatas, conteo de sobres y coronación en tiempo real.">
-  <meta property="og:image" content="img/candidatas/analhy-santillan.jpg">
+  <title>Reinado de Primavera 2027 · Pronto</title>
+  <meta name="description" content="Pronto, el Reinado de Primavera 2027 del Instituto Paucar del Sarasara.">
+  <meta property="og:title" content="Reinado de Primavera 2027 · Pronto">
+  <meta property="og:description" content="Muy pronto, una nueva elección de la reina del Instituto Paucar del Sarasara.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,500;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/app.css?v=202609251658">
-  <link rel="stylesheet" href="css/extra.css?v=202609251658">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,500;1,700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#140c1a; --bg2:#0d0812; --ink:#fbf3ea; --muted:#b9a6c2;
+      --gold:#e8c378; --gold-2:#f7e2ae; --gold-3:#b8914a; --rose:#f29bb8;
+      --font-display:'Playfair Display', Georgia, serif;
+      --font-body:'Outfit', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; color:var(--ink); font:16px/1.5 var(--font-body);
+      -webkit-font-smoothing:antialiased; overflow:hidden;
+      background:
+        radial-gradient(1100px 620px at 85% -10%, rgba(242,155,184,.15), transparent 60%),
+        radial-gradient(900px 560px at -10% 10%, rgba(232,195,120,.10), transparent 65%),
+        radial-gradient(900px 700px at 50% 120%, rgba(143,217,182,.07), transparent 60%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+    }
+    .escena{
+      position:relative; z-index:1; min-height:100%;
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      text-align:center; padding:32px 16px;
+    }
+    .corona{font-size:clamp(56px,14vw,96px); line-height:1; filter:drop-shadow(0 10px 30px rgba(232,195,120,.45)); animation:flota 4s ease-in-out infinite}
+    .antetitulo{margin-top:22px; font-size:12px; font-weight:600; letter-spacing:.28em; text-transform:uppercase; color:var(--gold)}
+    h1{
+      margin:10px 0 0; font-family:var(--font-display); font-weight:800;
+      font-size:clamp(34px,8vw,72px); line-height:1.05; letter-spacing:-.01em;
+    }
+    h1 em{font-style:italic; font-weight:700; color:var(--rose)}
+    .anio{
+      display:block; margin-top:6px; font-family:var(--font-display); font-weight:800;
+      font-size:clamp(64px,20vw,170px); line-height:1;
+      background:linear-gradient(100deg, var(--gold-3) 0%, var(--gold-2) 30%, var(--gold) 55%, var(--gold-2) 80%, var(--gold-3) 100%);
+      background-size:200% auto; -webkit-background-clip:text; background-clip:text; color:transparent;
+      animation:brillo 6s linear infinite;
+    }
+    .pronto{
+      margin-top:26px; display:inline-flex; align-items:center; gap:10px;
+      padding:10px 22px; border-radius:999px; border:1px solid rgba(232,195,120,.45);
+      background:rgba(232,195,120,.08); color:var(--gold-2);
+      font-size:clamp(15px,3.6vw,18px); font-weight:600; letter-spacing:.06em;
+    }
+    .pronto .punto{width:8px; height:8px; border-radius:50%; background:var(--gold); animation:late 1.6s ease-in-out infinite}
+    .texto{max-width:460px; margin:22px auto 0; color:var(--muted); font-size:clamp(14px,3.6vw,16px)}
+    .pie{margin-top:44px; font-size:13px; color:var(--muted); letter-spacing:.04em}
+    .petalos{position:fixed; inset:0; pointer-events:none; z-index:0; overflow:hidden}
+    .petalo{
+      position:absolute; top:-30px; width:12px; height:12px; border-radius:12px 0 12px 0;
+      background:linear-gradient(135deg, var(--rose), #ffd1e0); opacity:.55;
+      animation:cae linear infinite;
+    }
+    @keyframes flota{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+    @keyframes brillo{to{background-position:200% center}}
+    @keyframes late{0%,100%{opacity:1}50%{opacity:.25}}
+    @keyframes cae{
+      0%{transform:translate3d(0,0,0) rotate(0)}
+      100%{transform:translate3d(60px,110vh,0) rotate(540deg)}
+    }
+    @media (prefers-reduced-motion: reduce){
+      .corona,.anio,.pronto .punto{animation:none}
+      .petalos{display:none}
+    }
+  </style>
 </head>
 <body>
-  <!-- Sin servidor: todo lo arma js/app.js con lo que llega de Firebase (/publico). -->
-
-  <div class="ambient" id="ambient" aria-hidden="true"></div>
-
-  <div class="page" id="page">
-    <header class="masthead">
-      <div class="crest">👑</div>
-      <div>
-        <h1 class="display brand-title">Reinado de <span class="script gold-text">Primavera</span></h1>
-        <div class="brand-sub">Elección de la reina · 2026</div>
-      </div>
-      <span class="chip" id="mode-chip"><span class="dot"></span> <span id="mode-text">Conectando…</span></span>
-    </header>
-
-    <main class="main" id="main">
-      <div class="loading">
-        <div class="crown">👑</div>
-        <p>Conectando con la transmisión en vivo…</p>
-      </div>
-    </main>
+  <div class="petalos" aria-hidden="true">
+    <span class="petalo" style="left:6%;  animation-duration:13s; animation-delay:-2s"></span>
+    <span class="petalo" style="left:18%; animation-duration:17s; animation-delay:-9s; transform:scale(.7)"></span>
+    <span class="petalo" style="left:31%; animation-duration:15s; animation-delay:-5s"></span>
+    <span class="petalo" style="left:47%; animation-duration:19s; animation-delay:-12s"></span>
+    <span class="petalo" style="left:62%; animation-duration:14s; animation-delay:-3s"></span>
+    <span class="petalo" style="left:76%; animation-duration:18s; animation-delay:-7s"></span>
+    <span class="petalo" style="left:89%; animation-duration:16s; animation-delay:-11s"></span>
   </div>
 
-  <div class="conn" id="conn" hidden>● Reconectando…</div>
-  <div class="reactions" id="reactions" aria-hidden="true"></div>
-
-  <script type="module" src="js/app.js?v=202609251658"></script>
+  <main class="escena">
+    <div class="corona" aria-hidden="true">👑</div>
+    <div class="antetitulo">Instituto Paucar del Sarasara</div>
+    <h1>Reinado de <em>Primavera</em><span class="anio">2027</span></h1>
+    <div class="pronto"><span class="punto" aria-hidden="true"></span>Muy pronto</div>
+    <p class="texto">Una nueva elección de la reina. Las candidatas y la transmisión en vivo aparecerán aquí.</p>
+    <div class="pie">Gracias por acompañarnos en el Reinado 2026</div>
+  </main>
 </body>
 </html>

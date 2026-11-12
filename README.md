@@ -36,3 +36,13 @@ mismo nombre (`img/candidatas/nombre-apellido.jpg`).
 ```bash
 php -S 127.0.0.1:8090    # o cualquier servidor estático
 ```
+
+## Entre ediciones
+
+Desde noviembre de 2026, `index.html` muestra la portada «Pronto · Reinado de Primavera 2027»
+y no se conecta a Firebase. La pantalla en vivo (`js/app.js`, `css/`) sigue en el repositorio.
+Para la próxima edición, recupera el `index.html` del evento con:
+
+```bash
+git checkout 93720c0 -- index.html
+```
